@@ -1,3 +1,5 @@
+package linePrograms;
+
 public class Exe1 {
     public static void main(String[] args) {
         int a = 3;
