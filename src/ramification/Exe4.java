@@ -2,6 +2,10 @@ package ramification;
 
 public class Exe4 {
     public static void main(String[] args) {
+        /*
+        Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича.
+        Определить, пройдет ли кирпич через отверстие.
+        */
         int a = 5;
         int b = 6;
         int x = 3;
