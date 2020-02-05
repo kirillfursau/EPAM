@@ -1,4 +1,4 @@
-package linePrograms;
+package basics.linePrograms;
 
 public class Exe3 {
     public static void main(String[] args) {

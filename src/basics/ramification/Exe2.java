@@ -1,4 +1,4 @@
-package ramification;
+package basics.ramification;
 
 public class Exe2 {
     public static void main(String[] args) {

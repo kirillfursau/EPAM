@@ -1,4 +1,4 @@
-package linePrograms;
+package basics.linePrograms;
 
 import java.text.DecimalFormat;
 

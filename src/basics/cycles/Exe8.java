@@ -1,4 +1,4 @@
-package cycles;
+package basics.cycles;
 
 public class Exe8 {
     public static void main(String[] args) {

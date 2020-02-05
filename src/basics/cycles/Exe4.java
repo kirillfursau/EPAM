@@ -1,4 +1,4 @@
-package cycles;
+package basics.cycles;
 
 import java.math.BigInteger;
 
