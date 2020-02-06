@@ -7,7 +7,8 @@ public class Exe8 {
         Дана последовательность целых чисел a1,a2,,an. Образовать новую последовательность, выбросив из исходной
         те члены, которые равны min(a1,a2,,an).
         */
-        int[] array = new int[10];
+        int n = 10;
+        int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 10);
             System.out.println(array[i]);

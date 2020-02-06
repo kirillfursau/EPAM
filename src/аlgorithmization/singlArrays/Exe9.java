@@ -6,7 +6,8 @@ public class Exe9 {
         В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число.
         Если таких чисел несколько, то определить наименьшее из них.
         */
-        int[] array = new int[10];
+        int n = 10;
+        int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 10);
             System.out.println(array[i]);
@@ -22,12 +23,12 @@ public class Exe9 {
                     counter++;
                 }
             }
-            if (mostCounter < counter) {
+            if (mostCounter < counter || (mostCounter == counter && mostFrequent > array[i])) {
                 mostCounter = counter;
                 mostFrequent = array[i];
             }
         }
-        System.out.println("MOst freq" + mostFrequent);
+        System.out.println("Most freq " + mostFrequent);
     }
 }
 

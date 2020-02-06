@@ -5,7 +5,8 @@ public class Exe5 {
         /*
         Даны целые числа а1 ,а2 ,..., аn . Вывести на печать только те числа, для которых аi > i.
         */
-        int[] array = new int[10];
+        int n = 10;
+        int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 200) - 100;
             if (array[i] > i){

@@ -8,7 +8,8 @@ public class Exe4 {
         /*
         Даны действительные числа а1 ,а2 ,..., аn . Поменять местами наибольший и наименьший элементы.
         */
-        int[] array = new int[10];
+        int n = 10;
+        int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 200) - 100;
             System.out.println(array[i]);

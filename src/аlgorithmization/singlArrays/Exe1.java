@@ -5,11 +5,16 @@ public class Exe1 {
         /*
         В массив A [N] занесены натуральные числа. Найти сумму тех элементов, которые кратны данному К.
         */
-        int[] array = {1, 2, 3, 4, 10, 12, 84, 76, 52, 18};
+        int n = 10;
+        int[] array = new int[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * 200) - 100;
+            System.out.println(array[i]);
+        }
         int k = 3;
         int sum = 0;
-        for (int i = 0; i < array.length;i++){
-            if (array[i] % k == 0){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % k == 0) {
                 sum += array[i];
             }
         }

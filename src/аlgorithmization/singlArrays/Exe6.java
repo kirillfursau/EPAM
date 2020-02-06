@@ -6,7 +6,8 @@ public class Exe6 {
         Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых
         являются простыми числами.
         */
-        int[] array = new int[10];
+        int n = 10;
+        int[] array = new int[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 200);
             System.out.println(array[i]);
