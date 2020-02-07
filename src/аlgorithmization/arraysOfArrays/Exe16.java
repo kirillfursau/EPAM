@@ -8,7 +8,6 @@ public class Exe16 {
         Построить такой квадрат. Пример магического квадрата порядка 3:
         */
         int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        long count = 0;
         while (a != null) {
             int[][] m = makeArray(a);
             if (m == null) {
@@ -19,11 +18,8 @@ public class Exe16 {
                 printArray(m);
                 System.out.println();
             }
-            count++;
-            if (count % 1000000000 == 0) System.out.println("Проверено перестановок:  " + count);
             a = nextComb(a);
         }
-        System.out.println("Проверено перестановок:  " + count);
     }
 
     public static int[] nextComb(int[] a) {
@@ -58,7 +54,9 @@ public class Exe16 {
     }
 
     public static int[][] makeArray(int[] a) {
-        if (Math.sqrt(a.length) % 1 != 0) return null;
+        if (Math.sqrt(a.length) % 1 != 0) {
+            return null;
+        }
         int n = (int) (Math.sqrt(a.length));
         int[][] m = new int[n][n];
         for (int i = 0; i < m.length; i++) {
@@ -89,9 +87,13 @@ public class Exe16 {
                 if (i == j) sum_gdiog = sum_gdiog + m[i][j];
                 if (i + j == m.length - 1) sum_pdiog = sum_pdiog + m[i][j];
             }
-            if ((sum_str != mag) || (sum_stb != mag)) return false;
+            if ((sum_str != mag) || (sum_stb != mag)){
+                return false;
+            }
         }
-        if ((sum_gdiog != mag) || (sum_pdiog != mag)) return false;
+        if ((sum_gdiog != mag) || (sum_pdiog != mag)) {
+            return false;
+        }
         return true;
     }
 
