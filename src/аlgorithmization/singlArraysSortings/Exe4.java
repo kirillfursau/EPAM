@@ -9,13 +9,13 @@ public class Exe4 {
         Составить алгоритм сортировки, подсчитывая при этом количества перестановок.
         */
         int counter = 0;
-        int[] array = {9, 2, 4, 3, 9, 9};
+        int[] array = {9, 7, 4, 3, 2, 1};
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
                 int temp = array[i];
                 array[i] = array[i + 1];
                 array[i + 1] = temp;
-                i = 0;
+                i = -1;
                 counter++;
             }
         }
