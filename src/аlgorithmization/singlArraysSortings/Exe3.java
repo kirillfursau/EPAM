@@ -21,7 +21,7 @@ public class Exe3 {
             array[least] = tmp;
         }
         for (int i : array) {
-            System.out.print(i);
+            System.out.print(i + " ");
         }
     }
 }

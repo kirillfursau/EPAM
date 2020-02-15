@@ -1,6 +1,8 @@
 package аlgorithmization.singlArraysSortings;
 
-public class Exe5NotAll {
+import java.util.Arrays;
+
+public class Exe5 {
     public static void main(String[] args) {
         /*
         Сортировка вставками. Дана последовательность чисел a1,a2,,an . Требуется переставить числа в порядке
@@ -10,30 +12,44 @@ public class Exe5NotAll {
         не будут перебраны. Примечание. Место помещения очередного элемента в отсортированную часть производить с
         помощью двоичного поиска. Двоичный поиск оформить в виде отдельной функции.
         */
-        int index = binarySearch(new int[]{89, 57, 91, 47, 95, 3, 27, 22, 67, 99}, 67);
-        System.out.println(index);
-    }
-
-    public static int binarySearch(int arr[], int elementToSearch) {
-
-        int firstIndex = 0;
-        int lastIndex = arr.length - 1;
-        while (firstIndex <= lastIndex) {
-            int middleIndex = (firstIndex + lastIndex) / 2;
-            if (arr[middleIndex] == elementToSearch) {
-                return middleIndex;
+        int array[] = new int[]{10, 2, 5, 7, 1};
+        int indexFrom = 0;
+        int indexAt = 0;
+        int i = 1;
+        while (i < array.length) {
+            if (array[i - 1] > array[i]) {
+                indexAt = binarySearch(array, i - 1, array[i]);
+                indexFrom = i;
+                insert(array, indexAt, indexFrom);
             }
-            // если средний элемент меньше
-            // направляем наш индекс в middle+1, убирая первую часть из рассмотрения
-            else if (arr[middleIndex] < elementToSearch) {
-                firstIndex = middleIndex + 1;
-                // если средний элемент больше
-                // направляем наш индекс в middle-1, убирая вторую часть из рассмотрения
-            } else if (arr[middleIndex] > elementToSearch)
-                lastIndex = middleIndex - 1;
-
+            i++;
         }
-        return -1;
+        System.out.println(Arrays.toString(array));
     }
 
+    private static void insert(int[] array, int indexAt, int indexFrom) {
+        int temp = array[indexAt];
+        array[indexAt] = array[indexFrom];
+        for (int i = indexFrom; i > indexAt; i--) {
+            array[i] = array[i - 1];
+        }
+        array[indexAt + 1] = temp;
+    }
+
+    static int binarySearch(int[] array, int lastIndex, double searchElement) {
+        int firstIndex = 0;
+        while (firstIndex < lastIndex) {
+            int middleIndex = (firstIndex + lastIndex) / 2;
+            if (array[middleIndex] == searchElement) {
+                return middleIndex;
+            } else if (array[middleIndex] >= searchElement) {
+                lastIndex = middleIndex;
+            } else firstIndex = middleIndex + 1;
+        }
+        if (searchElement > array[lastIndex]) {
+            return lastIndex + 1;
+        } else {
+            return lastIndex;
+        }
+    }
 }
