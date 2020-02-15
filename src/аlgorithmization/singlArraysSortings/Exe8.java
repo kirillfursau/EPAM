@@ -20,7 +20,18 @@ public class Exe8 {
                 fractions[i][j] *= multiplier;
             }
         }
-        sortBySelection(fractions, 0);
+        for (int n = 0; n < fractions.length; n++) {
+            int maxIndex = n;
+            int max = fractions[n][0];
+            for (int i = n + 1; i < fractions.length; i++) {
+                if (fractions[maxIndex][0] > fractions[i][0]) {
+                    maxIndex = i;
+                }
+            }
+            max = fractions[maxIndex][0];
+            fractions[maxIndex][0] = fractions[n][0];
+            fractions[n][0] = max;
+        }
         for (int i = 0; i < fractions.length; i++) {
             for (int j = 0; j < fractions[i].length; j++) {
                 System.out.printf("%d ", fractions[i][j]);
@@ -42,20 +53,5 @@ public class Exe8 {
             }
         }
         return nod;
-    }
-
-    private static void sortBySelection(int[][] arr, int column) {
-        for (int n = 0; n < arr.length; n++) {
-            int maxIndex = n;
-            int max = arr[n][column];
-            for (int i = n + 1; i < arr.length; i++) {
-                if (arr[maxIndex][column] > arr[i][column]) {
-                    maxIndex = i;
-                }
-            }
-            max = arr[maxIndex][column];
-            arr[maxIndex][column] = arr[n][column];
-            arr[n][column] = max;
-        }
     }
 }
