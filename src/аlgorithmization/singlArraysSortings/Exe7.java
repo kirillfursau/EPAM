@@ -21,21 +21,15 @@ public class Exe7 {
             System.arraycopy(secondArray, i, thirdArray, k, 1);
             position = binarySearch(thirdArray, k, secondArray[i]);
             System.out.printf("element i = %d of secondArray insert in %d position %n", secondArray[i], position);
-            insert(thirdArray, position, k);
+            int temp = thirdArray[position];
+            thirdArray[position] = thirdArray[k];
+            for (int j = k; j > position; j--) {
+                thirdArray[j] = thirdArray[j - 1];
+            }
+            thirdArray[position + 1] = temp;
             k++;
         }
         System.out.println("Result " + Arrays.toString(thirdArray));
     }
-
-    private static void insert(int[] array, int insertIndexAt, int insertIndexFrom) {
-        int temp = array[insertIndexAt];
-        array[insertIndexAt] = array[insertIndexFrom];
-        for (int i = insertIndexFrom; i > insertIndexAt; i--) {
-            array[i] = array[i - 1];
-        }
-        array[insertIndexAt + 1] = temp;
-    }
-
-
 }
 
