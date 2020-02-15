@@ -13,27 +13,23 @@ public class Exe5 {
         помощью двоичного поиска. Двоичный поиск оформить в виде отдельной функции.
         */
         int array[] = new int[]{10, 2, 5, 7, 1};
-        int indexFrom = 0;
-        int indexAt = 0;
+        int indexFrom;
+        int indexAt;
         int i = 1;
         while (i < array.length) {
             if (array[i - 1] > array[i]) {
                 indexAt = binarySearch(array, i - 1, array[i]);
                 indexFrom = i;
-                insert(array, indexAt, indexFrom);
+                int temp = array[indexAt];
+                array[indexAt] = array[indexFrom];
+                for (int j = indexFrom; j > indexAt; j--) {
+                    array[j] = array[j - 1];
+                }
+                array[indexAt + 1] = temp;
             }
             i++;
         }
         System.out.println(Arrays.toString(array));
-    }
-
-    private static void insert(int[] array, int indexAt, int indexFrom) {
-        int temp = array[indexAt];
-        array[indexAt] = array[indexFrom];
-        for (int i = indexFrom; i > indexAt; i--) {
-            array[i] = array[i - 1];
-        }
-        array[indexAt + 1] = temp;
     }
 
     static int binarySearch(int[] array, int lastIndex, double searchElement) {
