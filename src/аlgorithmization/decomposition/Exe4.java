@@ -11,22 +11,22 @@ public class Exe4 {
         точек самое большое расстояние. Указание. Координаты точек занести в массив.
         */
         double[][] points = {{2, 4}, {3, 5}, {6, 2}, {7, 8},};
-        int maxIindex = Integer.MIN_VALUE;
-        int maxJindex = Integer.MIN_VALUE;
+        int maxXindex = 0;
+        int maxYindex = 0;
         double maxDistance = 0;
         for (int i = 0; i < points.length; i++) {
             for (int j = i + 1; j < points.length; j++) {
                 double dist = distanse(points[i], points[j]);
                 if (dist > maxDistance) {
                     maxDistance = dist;
-                    maxIindex = i;
-                    maxJindex = j;
+                    maxXindex = i;
+                    maxYindex = j;
                 }
             }
         }
-        System.out.println(" Max distance = " + maxDistance + " between points:");
-        printPoint(points[maxIindex]);
-        printPoint(points[maxJindex]);
+        System.out.printf(" Max distance = %.3f between points:%n", maxDistance);
+        printPoint(points[maxXindex]);
+        printPoint(points[maxYindex]);
     }
 
     public static double distanse(double m1[], double m2[]) {
