@@ -7,7 +7,7 @@ public class Exe14 {
         в степень n, равна самому числу. Найти все числа Армстронга от 1 до k. Для решения задачи использовать
         декомпозицию.
         */
-        int k = 100000;
+        int k = 3000;
         for (int i = 0; i < k; i++) {
             if (i == isArmstrongNumber(i)) {
                 System.out.println(i + " is Armstrong number ");
@@ -18,11 +18,11 @@ public class Exe14 {
     private static int isArmstrongNumber(int number) {
         int a = number;
         int sum = 0;
-        int bitnum = bitNumber(number);
+        int bitNum = bitNumber(number);
         do {
             number /= 10;
             a %= 10;
-            sum += Math.pow(a, bitnum);
+            sum += Math.pow(a, bitNum);
             a = number;
         } while (number > 0);
         return sum + a;
